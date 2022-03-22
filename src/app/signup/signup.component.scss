@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&family=Smooch+Sans&display=swap');
+
+.card{
+    border: 1px solid black;
+    background-color: transparent;
+}
+.rightSpace{
+    height: 100vh;
+    background-image: linear-gradient(rgba(108, 240, 108, 0.747),rgba(140, 240, 74, 0.822));
+    p{
+        font-size: 12rem;
+        color: white;
+        margin-top: 30%;
+    }
+}
+.display-4{
+    font-family: 'Poppins', sans-serif;
+}

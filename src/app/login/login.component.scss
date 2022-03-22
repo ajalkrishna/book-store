@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&family=Smooch+Sans&family=Syne+Mono&display=swap');
+.login{
+    height: 100vh;
+    background-color: rgba(250, 235, 215, 0.637);
+}
+.form-control{
+    border-radius: 0;
+    box-shadow: none;
+}
+.card{
+    border-radius: 0;
+    padding: 3rem 2rem;
+}
+.btn{
+    border-radius: 0%;
+}
+.register{
+    cursor: pointer;
+}
+input::placeholder{
+    font-family: 'Poppins', sans-serif;
+}

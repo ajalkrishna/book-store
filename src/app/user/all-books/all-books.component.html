@@ -1,0 +1,21 @@
+<div class="search">
+        <app-search class="border"></app-search>
+</div>
+<div class="container">
+    <div class="display-5 mb-3 mt-2 allBooksHeading">Explore the New Range of Collections</div>
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4 mb-3">
+        <div class="col" *ngFor="let book of books | search : userApi.searchTerm.getValue()">
+            <div class="card h-100">
+                <div class="card-head">
+                    <img src="../../../assets/placeholder-3.png" class="img-fluid w-100" (click)="showMore(book)">
+                </div>
+                <div class="card-body" (click)="showMore(book)">
+                    <h3>{{book.title}}</h3>
+                    <p class="lead">{{book.author}}</p>
+                    <p>{{book.category}}</p>
+                </div>
+                <button class="btn w-100" (click)="addToFavs(book)">Add to favorites</button>
+            </div>
+        </div>
+    </div>
+</div>

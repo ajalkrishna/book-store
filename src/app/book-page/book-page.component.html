@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="row mt-3">
+        <div class="col-12 col-md-7 col-lg-4">
+            <img src="../../assets/book placeholder.png" class="w-100">
+        </div>
+        <div class="col-12 col-md-5 col-lg-8">
+            <h2>{{book.title}}</h2>
+            <p class="lead">{{book.author}}</p>
+            <hr class="w-50">
+            <p>Category: {{book.category}}</p>
+            <p>Description: {{book.description}}</p>
+            <div class="d-flex">
+                <button class="btn btn-primary" (click)="recommend()" [disabled]="userApi.bookData.getValue().recommendation==true">Recommend</button>
+                <button class="ms-2 btn btn-warning" (click)="addToFavs()">Add to Favorites</button>
+            </div>
+            <!-- comments -->
+            <div class="all-comment mt-4 mb-2" *ngIf="userApi.bookData.getValue().comments.length!=0">
+                <h5>Customer Comments</h5>
+                <hr>
+                <div *ngFor="let user of userApi.bookData.getValue().comments">
+                    <h5 class="fw-bold">{{user.username | titlecase}}</h5>
+                    <p>{{user.comments}}</p>
+                    <hr>
+                </div>
+            </div>
+            <!-- add comments -->
+            <div class="new-comment mt-3">
+                <textarea name="comments" class="form-control" placeholder="comments" #comments></textarea>
+                <button class="btn btn-secondary mt-2" (click)="addComment(comments)">Add Comment</button>
+            </div>
+        </div>
+    </div>
+</div>

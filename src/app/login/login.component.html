@@ -1,0 +1,43 @@
+<!-- card -->
+<div class="login">
+    <div class="row pt-5 g-4">
+        <div class="col-lg-7">
+            <img src="../../assets/undraw_bookshelves_re_lxoy.svg" class="w-75 d-block mx-auto">
+        </div>
+        <div class="col-10 col-lg-4 my-auto  mx-auto">
+            <div class="card">
+                <div class="card-title">
+                    <h1 class="text-center">LOGIN</h1>
+                </div>
+                <div class="card-body">
+                    <form (ngSubmit)="login()" #formref="ngForm">
+
+                        <!-- email -->
+                        <div class="mb-3">
+                            <input type="text" id="email" name="email" class="form-control" placeholder="email-id" required
+                                [(ngModel)]="loginForm.email" #email="ngModel">
+                            <div *ngIf="email.invalid && (email.dirty || email.touched)">
+                                <p class="text-danger" *ngIf="email.errors?.['required']">
+                                    *email is required.
+                                </p>
+                            </div>
+                        </div>
+                        <!-- password -->
+                        <div class="mb-3">
+                            <input type="password" id="password" name="password" class="form-control" required
+                                [(ngModel)]="loginForm.password" placeholder="Password" #password="ngModel">
+                            <div *ngIf="password.invalid && (password.dirty || password.touched)">
+                                <p class="text-danger" *ngIf="password.errors?.['required']">
+                                    *Password is required.
+                                </p>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary d-block mx-auto w-100">Login</button>
+                    </form>
+                    <p class="text-end mt-2">Not a User? <span class="text-danger register"
+                            (click)="registerPage()">Register Now!!</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

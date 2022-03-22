@@ -1,0 +1,52 @@
+<div class="signup">
+    <div class="row">
+        <div class="col-10 col-md-6 col-lg-5 mx-auto py-5">
+            <div class="card p-3 mt-3">
+                <div class="card-title">
+                    <div class="display-4 text-primary">Register Now</div>
+                </div>
+                <div class="card-body">
+                    <form [formGroup]="userSignupForm" (ngSubmit)="signUp()">
+                        <!-- Name -->
+                        <div class="mb-3">
+                            <label for="username" class="form-label">Name</label>
+                            <input type="text" formControlName="username" id="username" placeholder="Jacob"
+                                class="form-control">
+                        </div>
+                        <!-- email -->
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="text" formControlName="email" id="email" class="form-control"
+                                placeholder="abc@mail.com">
+                        </div>
+                        <!-- password -->
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" formControlName="password" id="password" class="form-control"
+                                placeholder="********">
+                        </div>
+                        <!-- interest -->
+                        <div class="mb-3">
+                            <label for="interest" class="form-label">Choose your Interest</label>
+                            <select formControlName="interest" class="form-select">
+                                <option [selected]="true">Select...</option>
+                                <option value="fiction">Fiction</option>
+                                <option value="drama">Drama</option>
+                                <option value="thriller">Thriller</option>
+                                <option value="science">Science</option>
+                            </select>
+                        </div>
+                        <!-- su3bmit -->
+                        <button type="submit" class="btn btn-success"
+                            [disabled]="userSignupForm.invalid">Register</button>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-0 col-md-0 col-lg-6 rightSpace shadow ">
+            <p class="text-center"><i class="fa-solid fa-user-plus"></i></p>
+        </div>
+
+    </div>
+</div>

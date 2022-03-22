@@ -1,0 +1,20 @@
+<div class="search mb-2" *ngIf="userApi.user.getValue().favorites.length>0">
+    <app-search class="border"></app-search>
+</div>
+<div class="container">
+    <div class="card mb-2"
+        *ngFor="let book of userApi.user.getValue().favorites | search : userApi.searchTerm.getValue()">
+        <div class="row">
+            <div class="col-4 ">
+                <div class="img-placeholder"><img src="../../../assets/book-placeholder 2.png" class="w-50"></div>
+            </div>
+            <div class="col-5">
+                <h3>{{book.title}}</h3>
+                <p>{{book.author}}</p>
+                <button class="btn btn-danger" (click)='removeBook(book)'>Remove</button>
+            </div>
+        </div>
+    </div>
+    <div class="text-center mt-4 text-danger" *ngIf="userApi.user.getValue().favorites.length==0">Favorites are empty
+    </div>
+</div>

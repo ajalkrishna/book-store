@@ -1,0 +1,78 @@
+POST  http://localhost:4000/user/create-user
+Content-Type: application/json
+
+{
+    "username":"rajesh",
+    "password":"raj",
+    "email":"raj@mail.com",
+    "interest":"fiction"
+}
+###
+
+POST http://localhost:4000/user/login
+Content-Type: application/json
+
+{
+    "email":"raj@mail.com",
+    "password":"raj"
+}
+###
+POST http://localhost:4000/user/add-book
+Content-Type: application/json
+
+{
+    "title":"Inheritance",
+    "author":"Dani Shapiro",
+    "category":"Science",
+    "language":"English",
+    "description":"The first half of Inheritance reads like an emotional thriller-slash-detective story, as Shapiro uses the tools of modern genealogy—genetic data and Google—to peel back the layers on a long-buried family secret."
+}
+###
+GET http://localhost:4000/user/books
+
+###
+PUT http://localhost:4000/user/add-to-favorites
+Content-Type: application/json
+
+{
+    "email":"raj@mail.com",
+    "book":{
+        "_id": "622a093181ffd6f7ee13ed27",
+        "title": "Harry Potter",
+        "author": "JK Rowling",
+        "category": "Fiction",
+        "language": "English",
+        "description": "Most selling Novel ever",
+        "recommendation": false,
+        "comments": [],
+        "__v": 0
+    }
+}
+
+###
+PUT http://localhost:4000/user/update-recommendation
+Content-Type: application/json
+
+{
+    "title":"Harry Potter",
+    "status":false
+}
+###
+PUT http://localhost:4000/user/add-comments
+Content-Type: application/json
+
+{
+    "title":"Harry Potter",
+    "commentObj":{
+        "username":"rajesh",
+        "comments":"Best fictional book ever"
+    }
+}
+###
+PUT http://localhost:4000/user/remove-favorite
+Content-Type: application/json
+
+{
+    "email":"raj@mail.com",
+    "title": "Harry Potter"
+}
